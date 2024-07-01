@@ -64,12 +64,21 @@ namespace CSharp_task_30_6_2024
         {
         }
         */
-        static int getYears(int[] years)
+        public static void getYears(int[] years)
         {
-            int max = years.Max();
-            return max;
+            List<int> yearsList = new List<int>();
 
+            for (int i = 0; i < years.Length; i++)
+            {
+                if (years[i] >= 1950)
+                {
+                    yearsList.Add(years[i]);
+                }
+            }
+
+            Console.WriteLine("Years greater than 1950: " + string.Join(", ", yearsList));
         }
+
         //4-	Create a function that takes the age in years and returns the age in days.
         static int getDays(int age_years)
         {
@@ -92,10 +101,10 @@ namespace CSharp_task_30_6_2024
 
             }
             int[] years = yearsList.ToArray();
-
-            Console.WriteLine($"The maximum year is: {getYears(years)}");
+            getYears(years);
             int num_years_age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"The age in days: {getDays(num_years_age)}");
+
             Range ageRange = new Range(18, 60);
             Gender person1Gender = new Gender(GenderType.Male);
             Gender person2Gender = new Gender(GenderType.Female);

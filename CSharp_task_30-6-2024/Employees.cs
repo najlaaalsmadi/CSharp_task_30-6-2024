@@ -66,7 +66,8 @@ namespace CSharp_task_30_6_2024
                 throw new ArgumentException("Invalid phone number format.");
             }
         }
-
+        //StartsWith:
+        //تُستخدم لفحص ما إذا كانت السلسلة (String) تبدأ بنص معين أو لا. هذه الوظيفة تعود بقيمة منطقية (bool) تدل على نتيجة الفحص
         public bool IsValidPhoneNumber(string number)
         {
             return (number.StartsWith("077") || number.StartsWith("078") || number.StartsWith("079")) && number.Length == 10;
